@@ -10,7 +10,7 @@
     "require": {},
 	"autoload": {
 	    "psr-4": {
-		    "Zawntech\\Laravel\\KnockoutViews": "src/"
+		    "Zawntech\\Laravel\\KnockoutViews\\": "src/"
 	    }
     },
     "require-dev": {
