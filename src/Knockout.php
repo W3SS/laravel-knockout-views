@@ -37,11 +37,17 @@ class Knockout
         $this->modules[] = view($view, $data);
     }
 
+    /**
+     * Begins buffering output.
+     */
     public function startModuleBuffering()
     {
         ob_start();
     }
 
+    /**
+     * Dumps the output buffer to a module item.
+     */
     public function addModuleBuffer()
     {
         $this->modules[] = ob_get_clean();
