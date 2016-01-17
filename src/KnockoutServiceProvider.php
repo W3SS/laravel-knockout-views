@@ -17,4 +17,9 @@ class KnockoutServiceProvider extends ServiceProvider
             return new Knockout;
         });
     }
+
+    public function boot()
+    {
+        $this->loadViewsFrom(__DIR__.'/../views', 'knockout');
+    }
 }
