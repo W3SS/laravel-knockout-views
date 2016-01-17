@@ -1,0 +1,19 @@
+{
+    "name": "zawntech/laravel-knockout-views",
+    "description": "Adds knockout.js support for managing application view models.",
+    "authors": [
+        {
+            "name": "Marty Eason",
+            "email": "dev@zawntech.com"
+        }
+    ],
+    "require": {},
+	"autoload": {
+	    "psr-4": {
+		    "Zawntech\\Laravel\\KnockoutViews": "src/"
+	    }
+    },
+    "require-dev": {
+        "laravel/framework": "^5.2"
+    }
+}
