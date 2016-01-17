@@ -30,6 +30,7 @@ function KnockoutApp() {
     // Initialize the Knockout application.
     initialize();
 }
+
 // Create the KnockoutApp instance.
 var App = new KnockoutApp();
 </script>

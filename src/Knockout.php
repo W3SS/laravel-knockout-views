@@ -21,25 +21,30 @@ class Knockout
     }
 
     /**
-     * @param $moduleName string
+     * Add a module via a view.
      * @param $view
      * @param array $data
      * @throws \Exception
      */
-    public function addModule($moduleName, $view, $data=[])
+    public function addModuleView($view, $data=[])
     {
-        // Verify that the module does not already exist by id.
-        if ( isset($this->modules[$moduleName]) && !empty($this->modules) ) {
-            throw new \Exception('Module already exists.');
-        }
-
         // Verify that the module view actually exists.
         if ( ! view()->exists($view) ) {
             throw new \Exception("Specified view does not exist: {$view}.");
         }
 
         // Create the view.
-        $this->modules[$moduleName] = view($view, $data);
+        $this->modules[] = view($view, $data);
+    }
+
+    public function startModuleBuffering()
+    {
+        ob_start();
+    }
+
+    public function addModuleBuffer()
+    {
+        $this->modules[] = ob_get_clean();
     }
 
     /**
@@ -47,6 +52,9 @@ class Knockout
      */
     public function renderModules()
     {
+        // Print the knockout application.
+        echo view('knockout::knockout-app');
+
         // Loop through the modules views, print them.
         foreach( $this->modules as $module ) {
             echo $module;
