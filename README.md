@@ -55,7 +55,7 @@ modules in <i>Knockout::startModule()</i> and <i>Knockout::stopModule()</i> PHP 
 ```php
 <?php Knockout::startModule(); ?>
 <script>
-<!-- Extend App with a model to serve our view. -->
+// Extend App with a model to serve our view.
 App.todoListView = {
     active: ko.observable(true),
     name: ko.observable('My Todo List'),
