@@ -100,7 +100,6 @@ The Knockout::render() function:
 * finally, applies bindings on the constructed App object
 
 ```js
-<script>
 // Declare the main view model.
 var App = new KnockoutApp();
 
@@ -111,5 +110,4 @@ App.someModuleC = { ... }
 
 // Apply bindings on the final view model.
 ko.applyBindings(App);
-</script>
 ```
