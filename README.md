@@ -41,7 +41,8 @@ Then in your views, you can define as many modules as is needed by your applicat
 modules in <i>Knockout::startModule()</i> and <i>Knockout::stopModule()</i> PHP functions.
 
 ##### Example module:
-```php
+<i>/public/views/todoList.blade.php</i>
+```html
 <!-- HTML with data bindings -->
 <div data-bind="if: todoListView.active">
     <h1 data-bind="text: todoListView.name">
@@ -50,7 +51,8 @@ modules in <i>Knockout::startModule()</i> and <i>Knockout::stopModule()</i> PHP 
         ...
     </ul>
 </div>
-
+```
+```php
 <?php Knockout::startModule(); ?>
 <script>
 <!-- Extend App with a model to serve our view. -->
@@ -76,7 +78,7 @@ In your layout file encapsulating your main HTML and app.js file, we need to add
 the call the <strong>Knockout::render()</strong> function <i>after</i> our page '
 javascript has been loaded, for example:
 
-```
+```html
 <html>
     @yield('head')
     <body>
