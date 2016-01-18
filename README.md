@@ -34,7 +34,7 @@ $aliases = [
 ## Usage
 
 To use this system, you must:
-* the [knockout.js](http://knockoutjs.com) library in your application
+* have the [knockout.js](http://knockoutjs.com) library included in your application
 * call the Knockout::renderModules() function in your template
 
 Then in your views, you can define as many modules as is needed by your application by wrapping the 
