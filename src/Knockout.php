@@ -40,7 +40,7 @@ class Knockout
     /**
      * Begins buffering output.
      */
-    public function startModuleBuffering()
+    public function startModule()
     {
         ob_start();
     }
@@ -48,22 +48,17 @@ class Knockout
     /**
      * Dumps the output buffer to a module item.
      */
-    public function addModuleBuffer()
+    public function endModule()
     {
         $this->modules[] = ob_get_clean();
     }
 
     /**
-     * Echos the knockout view models.
+     * Renders the knockout javascript.
      */
-    public function renderModules()
+    public function render()
     {
         // Print the knockout application.
-        echo view('knockout::knockout-app');
-
-        // Loop through the modules views, print them.
-        foreach( $this->modules as $module ) {
-            echo $module;
-        }
+        echo view('knockout::knockout-app', ['modules' => $this->modules]);
     }
 }

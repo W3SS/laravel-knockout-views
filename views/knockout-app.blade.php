@@ -34,3 +34,9 @@ function KnockoutApp() {
 // Create the KnockoutApp instance.
 var App = new KnockoutApp();
 </script>
+
+@foreach( $modules as $module )
+{!! $module !!}
+@endforeach
+
+<script>ko.applyBindings(App);</script>
