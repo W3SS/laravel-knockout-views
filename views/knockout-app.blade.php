@@ -39,4 +39,10 @@ var App = new KnockoutApp();
 {!! $module !!}
 @endforeach
 
-<script>ko.applyBindings(App);</script>
+<script>
+    ko.applyBindings(App);
+
+    $(document).ready(function(){
+        $('.app-loading').removeClass('app-loading');
+    });
+</script>
