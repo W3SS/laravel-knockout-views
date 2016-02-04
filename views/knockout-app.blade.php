@@ -39,6 +39,10 @@ var App = new KnockoutApp();
 {!! $module !!}
 @endforeach
 
+@foreach( $secondary as $module )
+{!! $module !!}
+@endforeach
+
 <script>
     ko.applyBindings(App);
 

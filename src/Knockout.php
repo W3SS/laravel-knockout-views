@@ -13,6 +13,11 @@ class Knockout
     protected $modules = [];
 
     /**
+     * @var array Modules which should be loaded after the first set.
+     */
+    protected $secondaryModules = [];
+
+    /**
      * @return array
      */
     public function getModules()
@@ -47,10 +52,16 @@ class Knockout
 
     /**
      * Dumps the output buffer to a module item.
+     * @param $secondary bool Load to first or second channel.
      */
-    public function endModule()
+    public function endModule($secondary=false)
     {
-        $this->modules[] = ob_get_clean();
+        if ( ! $secondary ) {
+            $this->modules[] = ob_get_clean();
+        }
+        else{
+            $this->secondaryModules[] = ob_get_clean();
+        }
     }
 
     /**
@@ -59,7 +70,10 @@ class Knockout
     public function render()
     {
         // Print the knockout application.
-        echo view('knockout::knockout-app', ['modules' => $this->modules]);
+        echo view('knockout::knockout-app', [
+            'modules' => $this->modules,
+            'secondary' => $this->secondaryModules
+        ]);
     }
 
     /**
