@@ -61,4 +61,18 @@ class Knockout
         // Print the knockout application.
         echo view('knockout::knockout-app', ['modules' => $this->modules]);
     }
+
+    /**
+     * A convenience wrapper for setting an arbitrary value.
+     * @param $key
+     * @param $value
+     */
+    public function setValue($key, $value)
+    {
+        $this->startModule();
+        echo "<script>";
+        echo "App.{$key}($value)";
+        echo "</script>";
+        $this->endModule();
+    }
 }
