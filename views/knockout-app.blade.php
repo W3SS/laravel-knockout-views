@@ -32,7 +32,7 @@ function KnockoutApp() {
 }
 
 // Create the KnockoutApp instance.
-var App = new KnockoutApp();
+var {{$appName}} = new KnockoutApp();
 </script>
 
 @foreach( $modules as $module )
@@ -44,7 +44,7 @@ var App = new KnockoutApp();
 @endforeach
 
 <script>
-    ko.applyBindings(App);
+    ko.applyBindings({{$appName}});
 
     $(document).ready(function(){
         $('.app-loading').removeClass('app-loading');

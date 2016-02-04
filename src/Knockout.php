@@ -8,6 +8,11 @@ namespace Zawntech\Laravel\KnockoutViews;
 class Knockout
 {
     /**
+     * @var string The knockout JS main view model namespace.
+     */
+    protected $knockoutNamespace = 'App';
+
+    /**
      * @var array A list of modules registered within the Knockout object.
      */
     protected $modules = [];
@@ -71,6 +76,7 @@ class Knockout
     {
         // Print the knockout application.
         echo view('knockout::knockout-app', [
+            'appName' => $this->knockoutNamespace,
             'modules' => $this->modules,
             'secondary' => $this->secondaryModules
         ]);
@@ -88,7 +94,7 @@ class Knockout
         }
         $this->startModule();
         echo "<script>";
-        echo "App.{$key}($value)";
+        echo "{$this->knockoutNamespace}.{$key}($value)";
         echo "</script>";
         $this->endModule(true);
     }
