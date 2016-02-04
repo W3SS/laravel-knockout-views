@@ -69,6 +69,9 @@ class Knockout
      */
     public function setValue($key, $value)
     {
+        if ( is_string($value) ) {
+            $value = '"' . $value . '"';
+        }
         $this->startModule();
         echo "<script>";
         echo "App.{$key}($value)";
