@@ -94,8 +94,8 @@ class Knockout
         }
         $this->startModule();
         echo "<script>";
-        echo "{$this->knockoutNamespace}.{$key}($value)";
-        echo "</script>";
+        echo "{$this->knockoutNamespace}.{$key}($value);";
+        echo "</script>\n";
         $this->endModule(true);
     }
 }
