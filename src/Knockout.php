@@ -90,6 +90,6 @@ class Knockout
         echo "<script>";
         echo "App.{$key}($value)";
         echo "</script>";
-        $this->endModule();
+        $this->endModule(true);
     }
 }
