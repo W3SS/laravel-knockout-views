@@ -25,7 +25,7 @@ function KnockoutApp() {
     {
         activeView: ko.observable(''),
         pageTitle: ko.observable(''),
-    },
+    };
 
     // Define the initializer function.
     var initialize = function() {
