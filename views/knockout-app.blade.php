@@ -20,7 +20,6 @@ function KnockoutApp() {
         }
     };
 
-
     self.Page =
     {
         activeView: ko.observable(''),
@@ -30,7 +29,7 @@ function KnockoutApp() {
     // Define the initializer function.
     var initialize = function() {
         $(document).ready(function(){
-            self.viewPort.update();
+            self.ViewPort.update();
         });
     };
 
