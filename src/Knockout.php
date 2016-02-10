@@ -84,6 +84,7 @@ class Knockout
 
     /**
      * A convenience wrapper for setting an arbitrary value.
+     * Set values are automatically placed in the secondary module channel.
      * @param $key
      * @param $value
      */

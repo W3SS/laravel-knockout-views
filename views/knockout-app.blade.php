@@ -5,7 +5,7 @@ function KnockoutApp() {
     var self = this;
 
     // Define viewPort properties.
-    self.viewPort =
+    self.ViewPort =
     {
         // Window width
         width: ko.observable(0),
@@ -15,10 +15,17 @@ function KnockoutApp() {
 
         // Update the view port dimensions.
         update: function() {
-            self.viewPort.width( $(window).width() );
-            self.viewPort.height( $(window).width() );
+            self.ViewPort.width( $(window).width() );
+            self.ViewPort.height( $(window).width() );
         }
     };
+
+
+    self.Page =
+    {
+        activeView: ko.observable(''),
+        pageTitle: ko.observable(''),
+    },
 
     // Define the initializer function.
     var initialize = function() {
